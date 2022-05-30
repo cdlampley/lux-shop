@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import {NavLink} from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 
 const Products = () => {
 
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
+    const [loading, setLoading] = useState(false);
     let componentMounted = true;
 
     useEffect(() => {
         const getProducts = async () => {
+            setLoading(true);
             const res = await fetch('https://fakestoreapi.com/products');
             if (componentMounted) {
                 setData(await res.clone().json());
                 setFilter(await res.json());
+                setLoading(false);
             }
 
             return () => {
@@ -22,6 +26,14 @@ const Products = () => {
 
         getProducts();
     }, []);
+
+    const Loading = () => {
+        return(
+            <>
+               <Skeleton />
+            </>
+        )
+    }
 
     const filterProduct = (cat) => {
         const updatedProductList = data.filter((x) => x.category === cat);
@@ -42,7 +54,7 @@ const Products = () => {
                 {filter.map((product) => {
                     return (
                         <div className="col-md-3 mb-4">
-                            <div class="card h-100 text-center p-4" key={product.id}>
+                            <div className="card h-100 text-center p-4" key={product.id}>
                                 <img src={product.image} className="card-img-top" alt={product.title} height="300px" />
                                 <div className="card-body">
                                     <h5 className="card-title mb-0">{product.title.substring(0,12)}</h5>
@@ -68,7 +80,8 @@ const Products = () => {
                     </div>
                 </div>
                 <div className="row justify-content-center">
-                    <ShowProducts />
+                    {loading ? <Loading /> : <ShowProducts />}
+                    
                 </div>
             </div>
         </div>
