@@ -36,6 +36,7 @@ const handleBag = (state = cart, action) => {
                 break;
                  
         default:
+            return state;
             break;
     }
 } 
