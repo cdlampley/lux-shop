@@ -1,40 +1,41 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 
 const Header = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-light">
+            <nav className="navbar navbar-expand-lg bg-light mb-5">
                 <div className="container-fluid">
-                    <a className="navbar-brand link-dark display-6 fw-bolder" href="#">Lux Shop</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <NavLink className="navbar-brand link-dark text-uppercase fw-bold fs-4" to="/">Lux Shop</NavLink>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active link-dark" aria-current="page" href="#">Home</a>
+                                <NavLink className="nav-link link-dark" to="/products">Products</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link link-dark" href="#">About</a>
+                                <NavLink className="nav-link link-dark" to="/about">About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link link-dark" href="#">Contact</a>
+                                <NavLink className="nav-link link-dark" to="/contact">Contact</NavLink>
                             </li>
                         </ul>
-                        <button type="button" className="btn btn-outline-dark mx-1">
-                            <i className="fa fa-sign-in mx-1" aria-hidden="true"></i>
-                            Login
-                        </button>
-                        <button type="button" className="btn btn-outline-dark mx-1">
-                            <i className="fa fa-user-plus mx-1" aria-hidden="true"></i>
-                            Register
-                        </button>
-                        <button type="button" className="btn btn-outline-dark mx-1">
-                            <i className="fa fa-shopping-bag mx-1" aria-hidden="true"></i>
-                            Shopping Bag (0)
-                        </button>
+                        <div className="buttons">
+                            <NavLink to="/login" className="btn btn-outline-dark ms-2">
+                                <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                Login
+                            </NavLink>
+                            <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                                <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                Register
+                            </NavLink>
+                            <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                                <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                Shopping Bag (0)
+                            </NavLink>
+                        </div>
                     </div>
+
                 </div>
             </nav>
         </div>

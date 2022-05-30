@@ -6,7 +6,6 @@ const Footer = () => {
             <div className="mt-2">
                 <p>Lux Shop Copyright 2022</p>
             </div>
-
         </div>
     )
 }
