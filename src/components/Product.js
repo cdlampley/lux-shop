@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBag } from '../redux/action';
 import { useParams } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import Skeleton from 'react-loading-skeleton';
@@ -11,10 +9,6 @@ const Product = () => {
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const dispatch = useDispatch();
-    const addProduct = (product) => {
-        dispatch(addBag(product));
-    }
 
     useEffect(() => {
         const getProduct = async () => {
@@ -67,7 +61,6 @@ const Product = () => {
                         {product.description}
                     </p>
                     <button className="btn btn-outline-dark px-3 py-2"
-                    onClick={()=>addProduct(product)}
                     >
                         Add to bag
                     </button>
