@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import Products from './components/Products';
 import Product from './components/Product';
+import Bag from './components/Bag';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/products" element={<Products/>} />
         <Route exact path="/products/:id" element={<Product/>} />
+        <Route exact path="/bag" element={<Bag/>} />
       </Routes>
       <Footer />
     </div>

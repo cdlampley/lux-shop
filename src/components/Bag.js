@@ -1,14 +1,20 @@
 import React from 'react';
 
-export default function Bag(props) {
-    const {bagItems} = props;
+const Bag = () => {
+
+
     return (
         <div>
-            <h2>Bag Items</h2>
-            <div>
-                {bagItems.length === 0 && <div>Bag Is Empty</div>}
+            <div className="container my-5 py-5">
+                <div className="row">
+                    <div className="col-12 mb-5">
+                        <h2 className="display-6 fw-bolder text-center">Shopping Bag</h2>
+                    </div>
+                </div>
             </div>
+
         </div>
-            
     )
 }
+
+export default Bag;
