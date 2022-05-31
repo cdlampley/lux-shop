@@ -39,6 +39,9 @@ const Product = () => {
         )
     }
 
+    const [bagItems, setBagItems] = useState([]);
+
+
     const ShowProduct = () => {
         return (
             <>
@@ -61,6 +64,7 @@ const Product = () => {
                         {product.description}
                     </p>
                     <button className="btn btn-outline-dark px-3 py-2"
+                    
                     >
                         Add to bag
                     </button>
