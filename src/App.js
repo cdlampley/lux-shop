@@ -8,8 +8,6 @@ import Product from './components/Product';
 import Bag from './components/Bag';
 
 
-
-
 function App() {
   return (
     <div className="App">

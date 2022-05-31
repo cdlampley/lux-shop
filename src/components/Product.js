@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
 import Skeleton from 'react-loading-skeleton';
+
 
 
 const Product = () => {
@@ -41,8 +41,7 @@ const Product = () => {
         )
     }
 
-
-
+   
 
     const ShowProduct = () => {
         return (
@@ -65,11 +64,9 @@ const Product = () => {
                     <p className="lead">
                         {product.description}
                     </p>
-                    <button className="btn btn-outline-dark px-3 py-2"
-                    >
+                    <button className="btn btn-outline-dark px-3 py-2">
                         Add to bag
-                    </button>
-                    <NavLink to="/bag" className="btn btn-outline-dark ms-2 px-3 py-2">Go to Bag</NavLink>
+                    </button> 
                 </div>
             </>
         )

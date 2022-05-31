@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import {addProduct} from './AddToBag';
 
 
 const Header = () => {
+
+   
 
     return (
         <div>
