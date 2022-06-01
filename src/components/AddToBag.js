@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function AddToBag() {
-    const [addProduct, setAddProduct] = useState(0);
+const AddToBag = () => {
     
-    return(
-        <div>
-                   
-        </div>
-    )
-
+    
 }
 
 

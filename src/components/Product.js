@@ -4,7 +4,9 @@ import Skeleton from 'react-loading-skeleton';
 
 
 
-const Product = () => {
+const Product = (props) => {
+
+    const { onAdd } = props;
 
     const { id } = useParams();
     const [product, setProduct] = useState([]);
@@ -64,7 +66,8 @@ const Product = () => {
                     <p className="lead">
                         {product.description}
                     </p>
-                    <button className="btn btn-outline-dark px-3 py-2">
+                    <button className="btn btn-outline-dark px-3 py-2"
+                    >
                         Add to bag
                     </button> 
                 </div>

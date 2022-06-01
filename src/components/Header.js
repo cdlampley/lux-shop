@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import {addProduct} from './AddToBag';
-
+import { isAuthenticated, userHasAuthenticated } from 'aws-amplify';
 
 const Header = () => {
 
-   
+    function handleLogout ()  {
+        userHasAuthenticated(false);
+    }
 
     return (
         <div>
@@ -25,14 +26,27 @@ const Header = () => {
                             </li>
                         </ul>
                         <div className="buttons">
-                            <NavLink to="/login" className="btn btn-outline-dark ms-2">
-                                <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
-                                Login
-                            </NavLink>
-                            <NavLink to="/register" className="btn btn-outline-dark ms-2">
-                                <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
-                                Register
-                            </NavLink>
+                            {
+                                isAuthenticated ? (
+                                    <NavLink onClick={handleLogout} 
+                                    className="btn btn-outline-dark ms-2">
+                                        <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                        Logout
+                                    </NavLink>
+                                ) : (
+                                    <>
+                                    <NavLink to="/login" 
+                                    className="btn btn-outline-dark ms-2">
+                                        <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                        Login
+                                    </NavLink>
+                                    <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                                        <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
+                                        Register
+                                    </NavLink>
+                                    </> 
+                                )
+                            }
                             <NavLink to="/bag" className="btn btn-outline-dark ms-2">
                                 <i className="fa fa-sign-in me-1" aria-hidden="true"></i>
                                 Shopping Bag (0)</NavLink>
