@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+
 
 
 
 const Product = () => {
 
-
     const { id } = useParams();
     const [product, setProduct] = useState([]);
+    const [addItem] = useState([])
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -40,8 +41,6 @@ const Product = () => {
         )
     }
 
-   
-
     const ShowProduct = () => {
         return (
             <>
@@ -64,7 +63,7 @@ const Product = () => {
                         {product.description}
                     </p>
                     <button className="btn btn-outline-dark px-3 py-2"
-                    >
+                    onClick={() => addItem(product)}>
                         Add to bag
                     </button> 
                 </div>

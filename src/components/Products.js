@@ -76,7 +76,7 @@ const Products = () => {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-12 mb-5">
-                        <h1 className="display-6 fw-bolder text-center">Lastest Trends</h1>
+                        <h1 className="display-6 fw-bolder text-center">Products</h1>
                     </div>
                 </div>
                 <div className="row justify-content-center">
