@@ -18,7 +18,7 @@ const Login = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        
+
         try {
             await Auth.signIn(email, password);
             userHasAuthenticated(true);
@@ -37,8 +37,12 @@ const Login = () => {
                     <div className="Login">
                         <Form onSubmit={handleSubmit}>
                             <div className="mb-3">
-                                <Form.Group size="lg" controlId="email">
-                                    <Form.Label className="form-label">Email</Form.Label>
+                                <Form.Group size="lg"
+                                    controlId="email">
+                                    <Form.Label
+                                        className="form-label">
+                                        Email
+                                    </Form.Label>
                                     <Form.Control
                                         autoFocus
                                         type="email"
@@ -49,8 +53,12 @@ const Login = () => {
                                 </Form.Group>
                             </div>
                             <div className="mb-3">
-                                <Form.Group size="lg" controlId="password">
-                                    <Form.Label className="form-label">Password</Form.Label>
+                                <Form.Group size="lg"
+                                    controlId="password">
+                                    <Form.Label
+                                        className="form-label">
+                                        Password
+                                    </Form.Label>
                                     <Form.Control
                                         type="password"
                                         className="form-control"

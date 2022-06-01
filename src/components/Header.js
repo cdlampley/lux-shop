@@ -8,6 +8,7 @@ const Header = () => {
         userHasAuthenticated(false);
     }
 
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light">

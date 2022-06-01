@@ -4,15 +4,12 @@ import Skeleton from 'react-loading-skeleton';
 
 
 
-const Product = (props) => {
+const Product = () => {
 
-    const { onAdd } = props;
 
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
-
-    
 
     useEffect(() => {
         const getProduct = async () => {
