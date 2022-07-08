@@ -8,5 +8,7 @@ Coming soon: login and registration, add to cart, contact formm completion
 Skills: JavaScript, React JS, Node JS
 Tools: VS Code, Git & GitHub Pages, JSON, REST API
 
+CodeSandBox link to view project: https://dsupps.csb.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
