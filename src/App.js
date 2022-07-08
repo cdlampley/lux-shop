@@ -8,6 +8,8 @@ import Product from './components/Product';
 import Bag from './components/Bag';
 import Login from './components/Login';
 import Register from './components/Register';
+import About from './components/About';
+import Contact from './components/Contact';
 import { AppContext } from './lib/contextLib';
 
 
@@ -26,6 +28,8 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />}/>
           <Route exact path="/bag" element={<Bag />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
       </AppContext.Provider>
     </div>
