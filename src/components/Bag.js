@@ -2,24 +2,7 @@ import React, { useRef } from 'react';
 
 
 
-const Bag = ({
-    bag,
-    addItem,
-    delItem,
-}) => {
-
-    const refContainer = useRef();
-    const total = (arr) => {
-        return arr.reduce((cal, item) => {
-            return cal + item.price * item.amount;
-        }, 0);
-    };
-
-    const Dollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    })
-
+const Bag = () => {
 
 
     return (
